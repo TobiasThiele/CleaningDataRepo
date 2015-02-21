@@ -26,6 +26,12 @@ Please make sure that the following files are in your working directory:
 * activity_labels.txt
 * features.txt
 
-Information on where to get these files can be found in the Code Book
+
+
+Information on where to get these files can be found in the Code Book.
+
+
+In addition to that the "dplyr"-package has to be installed, it will be loaded by the code.
+
 
 Good luck and take care, Tobias

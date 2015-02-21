@@ -16,7 +16,7 @@ activity_labels <- read.table("activity_labels.txt")
 features <- read.table("features.txt")
 
 
-## Combine all data set into one matrix
+## Combine all data sets into one matrix
 train <- cbind(subject_train, y_train, x_train)
 test<- cbind(subject_test, y_test, x_test)
 overall <- rbind(test, train)
@@ -24,7 +24,7 @@ overall <- rbind(test, train)
 ##Rename columns
 colnames(overall) <-  c("subject", "activity", as.character(features[,2]))
 
-##Set activity as factor in rename the labels in accroding to the table in activity_labels
+##Set activity as factor and rename the labels in according to the table in activity_labels.txt
 overall$activity <- as.factor(overall$activity)
 levels(overall$activity) <- as.character(activity_labels[,2])
 
@@ -32,7 +32,7 @@ levels(overall$activity) <- as.character(activity_labels[,2])
 names <- colnames(overall)
 tidyselect <- grepl("mean()", names[1:length(names)])|grepl("std()", names[1:length(names)])
 
-##Add first two columns to the selection (to keep subject and activity)
+##Add first two columns to the selection (to keep subject and activity withon the tidy set)
 tidyselect[1:2]=TRUE
 
 ##Generate tidy data set
