@@ -1,24 +1,23 @@
 ---
 title: "CodeBook"
 author: "Tobias"
-date: "Monday, February 16, 2015"
+date: "Monday, February 21, 2015"
 output: html_document
 ---
+#CODE BOOK
+This is a brief description of the data set and the code to obtain this data set.
 
-In the following text a 
+The original data se can be found on http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The original data was obtained from the gyroscope of a smartphone which was attached to 30 different persons conducting 6 different activities. After preprocessing (see link provided) there was a set of 561 variables for each person and each activity.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The data which was used as an input of the script was separated in a training and a test set with two separate files for the desciption of the activitites and the variables.
+The files can be found at 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
-```{r}
-summary(cars)
-```
+To obtain a tiny data set the activities were changed from number to factors describing the activity. The variables obtained by the Smartphone were named correctly and just the values with the means and the stanard deviation were chosen. From that data the means were take for every subject and activity
 
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The final dataset consists of
+* The subject
+* The activity
+* The mean of 79 variables
