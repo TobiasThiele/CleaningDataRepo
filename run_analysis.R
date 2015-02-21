@@ -1,3 +1,6 @@
+##load dplyr library - please install it before running the code
+library(dplyr)
+
 ##Import Data from test set
 y_test <- read.table("y_test.txt")
 x_test <- read.table("X_test.txt")
@@ -27,25 +30,18 @@ levels(overall$activity) <- as.character(activity_labels[,2])
 
 ##Select columns with std and mean
 names <- colnames(overall)
-tidyselect <- grepl("mean", names[1:length(names)])|grepl("std", names[1:length(names)])
+tidyselect <- grepl("mean()", names[1:length(names)])|grepl("std()", names[1:length(names)])
 
-##Add first two columns to the selction
+##Add first two columns to the selection (to keep subject and activity)
 tidyselect[1:2]=TRUE
 
 ##Generate tidy data set
-
 tidyset <- overall[,tidyselect]
 
-
-##ddply(tidyset,~subject,summarise,mean)
-##tidymelt <- melt(tidyset, id=c("subject", "activity"))
-##set <- acast(tidymelt, subject~activity, mean)
-##tidysplit = split(tidyset, tidyset$subject)
-
-
-
-finalset <- tidyset
-
-
+##Group the tidy data set by subjects and activity and calculate the mean for every combination 
+grouped <- group_by(tidyset, activity, subject)
+finalset <- summarise_each(grouped, funs(mean))
+                   
+## Write the results in a textfile
 write.table(finalset, file="final.txt", row.name=FALSE)
 

@@ -17,14 +17,14 @@ run_analysis.R
 ```
 
 Please make sure that the following files are in your working directory:
-*y_test.txt
-*"X_test.txt
-*subject_test.txt
-*y_train.txt
-*X_train.txt
-*subject_train.txt
-*activity_labels.txt
-*features.txt
+* y_test.txt
+* X_test.txt
+* subject_test.txt
+* y_train.txt
+* X_train.txt
+* subject_train.txt
+* activity_labels.txt
+* features.txt
 
 Information on where to get these files can be found in the Code Book
 
