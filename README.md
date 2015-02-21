@@ -5,18 +5,17 @@ date: "Monday, February 16, 2015"
 output: html_document
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Dear Reviewer
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+First of all: Thanks for taking your time to review my code.
+I hope you had a fun during your course project and finally got the right answer.
 
-```{r}
-summary(cars)
+You can start my code with
+
+```
+run_analysis.R
 ```
 
-You can also embed plots, for example:
+To make sure that on your computer R will find the data, please change the path in the R-code in the setwd() (which are the first lines after the first 3 remarks).
 
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Good luck and take care, Tobias
